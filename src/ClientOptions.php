@@ -8,4 +8,10 @@ namespace Dfranquias\Pay\Sdk;
 final class ClientOptions
 {
     public const ENVIRONMENT = 'environment';
+
+    public const PRODUCTION_URL = 'https://api.dfranquiaspay.com.br';
+
+    public const SANDBOX_URL = 'https://apistaging.dconta.com.br';
+
+    public const ENVIRONMENT_PRODUCTION = 'production';
 }

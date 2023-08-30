@@ -5,7 +5,6 @@ use \PhpCsFixer\Finder;
 
 $rules = [
     '@PSR12' => true,
-    'strict_param' => true,
     'array_syntax' => ['syntax' => 'short']
 ];
 

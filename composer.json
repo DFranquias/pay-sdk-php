@@ -6,10 +6,7 @@
     "autoload": {
         "psr-4": {
             "Dfranquias\\Pay\\Sdk\\": "src/"
-        },
-        "files": [
-            "src/Helpers/constants.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -27,7 +24,7 @@
         "php": "^7.2.5|^8.0",
         "guzzlehttp/guzzle": "^7",
         "spatie/data-transfer-object": "v1.x-dev",
-        "vlucas/phpdotenv": "^5.5@dev"
+        "vlucas/phpdotenv": "^5"
     },
     "require-dev": {
         "phpunit/phpunit": "^8",

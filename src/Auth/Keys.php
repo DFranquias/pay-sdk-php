@@ -41,15 +41,18 @@ class Keys extends DataTransferObject
 
     /**
      * Carrega as variáveis de ambiente.
+     *
+     * @throws \Dotenv\Exception\ValidationException Caso as chaves não estejam ambas presentes nas variáveis de ambiente.
+     * @return array<string, string|null>
      */
-    private function loadEnvironment()
+    protected static function loadEnvironment()
     {
-        $envPath = __DIR__ . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
+        $env = Dotenv::createImmutable(getcwd());
 
-        $env = Dotenv::createImmutable($envPath);
+        $variables = $env->load();
 
         $env->required(['DF_PAY_PUBLIC_KEY', 'DF_PAY_SECRET_KEY']);
 
-        return $env->load();
+        return $variables;
     }
 }

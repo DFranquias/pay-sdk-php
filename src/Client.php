@@ -11,13 +11,13 @@ use GuzzleHttp\RequestOptions;
  */
 class Client extends BaseClient
 {
-    public function __construct(array $options = [ClientOptions::ENVIRONMENT => DF_PAY_ENV_PRODUCTION])
+    public function __construct(array $options = [ClientOptions::ENVIRONMENT => ClientOptions::PRODUCTION_URL])
     {
         $keys = Keys::fromEnvironment();
 
         parent::__construct([
-            'base_uri' => $options[ClientOptions::ENVIRONMENT] !== DF_PAY_ENV_PRODUCTION ?
-                DF_PAY_BASE_URI_SANDBOX : DF_PAY_BASE_URI_PRODUCTION,
+            'base_uri' => $options[ClientOptions::ENVIRONMENT] !== ClientOptions::ENVIRONMENT_PRODUCTION ?
+                ClientOptions::PRODUCTION_URL : ClientOptions::SANDBOX_URL,
             RequestOptions::HEADERS => [
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json',
