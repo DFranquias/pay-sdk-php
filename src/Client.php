@@ -16,7 +16,7 @@ class Client extends BaseClient
         $keys = Keys::fromEnvironment();
 
         parent::__construct([
-            'base_uri' => $options[ClientOptions::ENVIRONMENT] !== DF_PAY_ENV_PRODUCTION ? 
+            'base_uri' => $options[ClientOptions::ENVIRONMENT] !== DF_PAY_ENV_PRODUCTION ?
                 DF_PAY_BASE_URI_SANDBOX : DF_PAY_BASE_URI_PRODUCTION,
             RequestOptions::HEADERS => [
                 'Content-Type' => 'application/json',
