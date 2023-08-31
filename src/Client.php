@@ -11,9 +11,12 @@ use GuzzleHttp\RequestOptions;
  */
 class Client extends BaseClient
 {
-    public function __construct(array $options = [ClientOptions::ENVIRONMENT => ClientOptions::PRODUCTION_URL])
+    public function __construct(array $options, Keys $keys = null)
     {
-        $keys = Keys::fromEnvironment();
+        // Carrega as chaves do ambiente caso nenhum objeto de autenticação seja fornecido.
+        if (!$keys) {
+            $keys = Keys::fromEnvironment();
+        }
 
         parent::__construct([
             'base_uri' => $options[ClientOptions::ENVIRONMENT] !== ClientOptions::ENVIRONMENT_PRODUCTION ?
