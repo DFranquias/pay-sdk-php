@@ -8,7 +8,7 @@ use Dotenv\Dotenv;
 /**
  * Objeto para autenticação junto à API.
  */
-class Keys extends DataTransferObject
+final class Keys extends DataTransferObject
 {
     /**
      * Chave pública para acesso à API.
@@ -24,6 +24,16 @@ class Keys extends DataTransferObject
      */
     public $secretKey;
 
+    protected function __construct(array $parameters = [])
+    {
+        parent::__construct($parameters);
+    }
+
+    public static function create(array $parameters = [])
+    {
+        return static::immutable($parameters);
+    }
+
     /**
      * Cria um objeto de autenticação a partir das variáveis de ambiente.
      *
@@ -33,7 +43,7 @@ class Keys extends DataTransferObject
     {
         $env = static::loadEnvironment();
 
-        return static::immutable([
+        return static::create([
             'publicKey' => $env['DF_PAY_PUBLIC_KEY'],
             'secretKey' => $env['DF_PAY_SECRET_KEY'],
        ]);

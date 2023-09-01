@@ -9,12 +9,12 @@ use GuzzleHttp\RequestOptions;
 /**
  * Cliente responsável pela configuração da comunicação à API DFranquias Pay.
  */
-class Client extends BaseClient
+final class Client extends BaseClient
 {
     public function __construct(array $options, Keys $keys = null)
     {
         // Carrega as chaves do ambiente caso nenhum objeto de autenticação seja fornecido.
-        if (!$keys) {
+        if (!$keys instanceof Keys) {
             $keys = Keys::fromEnvironment();
         }
 

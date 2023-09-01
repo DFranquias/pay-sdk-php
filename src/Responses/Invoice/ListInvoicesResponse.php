@@ -5,11 +5,11 @@ namespace Dfranquias\Pay\Sdk\Responses\Invoice;
 use Dfranquias\Pay\Sdk\Dtos\Invoice;
 use Dfranquias\Pay\Sdk\Responses\BaseResponse;
 
-class ListInvoicesResponse extends BaseResponse
+final class ListInvoicesResponse extends BaseResponse
 {
     /**
      * Invoicees retornados.
-     * 
+     *
      * @var Invoice[]
      */
     public $data;

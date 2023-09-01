@@ -6,7 +6,7 @@ namespace Dfranquias\Pay\Sdk\Responses;
  * Resposta de erro genérica. Ocorre em todos os erros, diferindo apenas em código HTTP.
  * Erros de validação têm uma resposta diferente e dedicada.
  */
-class ErrorResponse extends BaseResponse
+final class ErrorResponse extends BaseResponse
 {
     /**
      * ID do erro.

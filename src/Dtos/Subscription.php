@@ -4,7 +4,7 @@ namespace Dfranquias\Pay\Sdk\Dtos;
 
 use Spatie\DataTransferObject\FlexibleDataTransferObject;
 
-class Subscription extends FlexibleDataTransferObject
+final class Subscription extends FlexibleDataTransferObject
 {
     // ...
 }
